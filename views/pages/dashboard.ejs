@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <form action="/user/logout" method="get">
+        <input type="submit" value="logout">
+    </form>
+    <br>
+    <br>
+    <br>
+    <p>Hello <%= user.firstname +" "+ user.lastname %></p>
+    <br>
+    <br>
+    <!-- <%="/user/removeUser?"+ user._id %> -->
+    <form action="/user/removeUser" method="get">
+        <input type="submit" value="delete user">
+    </form>
+    <br>
+    <form action="/user/updateUser" method="get">
+        <label for="firstname">firstname</label>
+        <input type="text" name="firstname" id="firstname" value=<%= user.firstname%>>
+        <br>
+        <label for="lastname">lastname</label>
+        <input type="text" name="lastname" id="lastname" value=<%= user.lastname%>>
+        <br>
+        <label for="username">username</label>
+        <input type="text" name="username" id="username" value=<%= user.username%>>
+        <br>
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" value=''>
+        <br>
+        <input type="submit" value="update">
+    </form>
+
+
+</body>
+
+</html>
